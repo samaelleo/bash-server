@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update
-sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron
+sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
 crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
@@ -52,7 +52,6 @@ docker rm -f firefox
 docker rm -f 3x-ui
 docker restart socks5
 sudo docker-compose up -d
-echo "y" | sudo apt install ufw
 sudo ufw default allow routed
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
