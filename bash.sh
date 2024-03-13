@@ -52,7 +52,7 @@ docker rm -f firefox
 docker rm -f 3x-ui
 docker restart socks5
 sudo docker-compose up -d
-sudo apt install ufw -y
+echo "y" | sudo apt install ufw
 sudo ufw default allow routed
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
