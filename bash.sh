@@ -1,9 +1,9 @@
 #!/bin/bash
 sudo apt update
-sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snpd net-tools
+sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snpd net-tools tmux
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
-crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
+# crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
 sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
@@ -73,9 +73,11 @@ sudo ufw deny out 465
 sudo ufw deny out 587
 sudo ufw allow from any to any port 443
 sudo ufw deny out from any to 10.0.0.0/8
-sudo apt upgrade -y
 sudo ufw deny out from any to 172.16.0.0/12
 sudo ufw deny out from any to 192.168.0.0/16
 sudo ufw deny out from any to 141.101.78.0/23
 sudo ufw deny out from any to 173.245.48.0/20
 echo "y" | sudo ufw enable
+tmux
+sudo apt upgrade -y
+exit
