@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update
-sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw
+sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snpd
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
 crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
@@ -46,7 +46,7 @@ services:
     environment:
       - PROXY_HOST=0.0.0.0
       - PROXY_PORT=1080
-    restart: always
+    restart: unless-stopped
 EOF
 docker rm -f firefox
 docker rm -f 3x-ui
