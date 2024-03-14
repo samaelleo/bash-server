@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt update
-sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snpd net-tools tmux
+sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
 # crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
