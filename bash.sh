@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo -i
 echo 'ubuntu:asdfASDF1234!' | sudo chpasswd
 echo 'root:asdfASDF1234!' | sudo chpasswd
 sudo apt update
