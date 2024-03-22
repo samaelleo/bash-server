@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo -i
-echo 'ubuntu:asdfASDF1234!' | sudo chpasswd
-echo 'root:asdfASDF1234!' | sudo chpasswd
+echo "ubuntu:asdfASDF1234!" | sudo chpasswd
+echo "root:asdfASDF1234!" | sudo chpasswd
 sudo apt update
 sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux
 crontab -r
