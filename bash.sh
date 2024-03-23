@@ -2,7 +2,7 @@
 echo "ubuntu:asdfASDF1234!" | sudo chpasswd
 echo "root:asdfASDF1234!" | sudo chpasswd
 sudo apt update
-sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux
+sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux resolvconf
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
 # crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
@@ -81,5 +81,7 @@ sudo ufw deny out from any to 192.168.0.0/16
 sudo ufw deny out from any to 141.101.78.0/23
 sudo ufw deny out from any to 173.245.48.0/20
 echo "y" | sudo ufw enable
+echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
 sudo apt upgrade -y
+reboot
 exit
