@@ -83,5 +83,5 @@ sudo ufw deny out from any to 173.245.48.0/20
 echo "y" | sudo ufw enable
 echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
 sudo apt upgrade -y
-reboot
+sudo reboot
 exit
