@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "ubuntu:asdfASDF1234!" | sudo chpasswd
 echo "root:asdfASDF1234!" | sudo chpasswd
+sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
 sudo apt update && apt upgrade -y
 sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux resolvconf
 crontab -r
