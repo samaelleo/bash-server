@@ -4,6 +4,8 @@ echo "root:asdfASDF1234!" | sudo chpasswd
 sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
 sudo apt update && apt upgrade -y
 sudo apt install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux resolvconf
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
 # crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
