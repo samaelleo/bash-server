@@ -10,7 +10,7 @@ crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab
 sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
-cat <<EOF > ./docker-compose.yml
+cat <<EOF >> ./docker-compose.yml
 version: "3.9"
 services:
 #  3x-ui:
