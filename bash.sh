@@ -8,7 +8,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
-# crontab -l | { cat; echo "0 */3   *   *   *   docker restart firefox  "; } | crontab -
+crontab -l | { cat; echo "0 */3   *   *   *   docker restart socks5"; } | crontab -
 sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
