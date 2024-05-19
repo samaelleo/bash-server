@@ -7,7 +7,7 @@ sudo apt-get -qq install -y docker.io docker-compose python3-pip iptraf iperf op
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 crontab -r
-crontab -l | { cat; echo "5 1   *   *   *    /sbin/shutdown -r +10"; } | crontab -
+crontab -l | { cat; echo "5 1   *   *   *    sudo reboot"; } | crontab -
 crontab -l | { cat; echo "0 */3   *   *   *   docker restart socks5"; } | crontab -
 sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
