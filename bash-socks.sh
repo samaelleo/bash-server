@@ -13,6 +13,7 @@ sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
 sudo bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
+rm -rf /usr/local/etc/xray/config.json
 cat <<EOF >> /usr/local/etc/xray/config.json
 {
   "log": {
