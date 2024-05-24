@@ -3,12 +3,9 @@ echo "ubuntu:asdfASDF1234!" | sudo chpasswd
 echo "root:asdfASDF1234!" | sudo chpasswd
 sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
 sudo apt-get -qq update && apt-get -qq upgrade -y
-sudo apt-get -qq install -y docker.io docker-compose python3-pip iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux resolvconf
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+sudo apt-get -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux resolvconf bashtop
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    sudo reboot"; } | crontab -
-crontab -l | { cat; echo "0 */3   *   *   *   docker restart socks5"; } | crontab -
 sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
@@ -65,6 +62,5 @@ sudo ufw deny out from any to 141.101.78.0/23
 sudo ufw deny out from any to 173.245.48.0/20
 echo "y" | sudo ufw enable
 echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
-
-sudo reboot
 exit
+sudo reboot
