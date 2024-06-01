@@ -1,7 +1,7 @@
 #!/bin/bash
 #echo "ubuntu:asdfASDF1234!" | sudo chpasswd
 echo "root:asdfASDF1234!" | sudo chpasswd
-sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
+#sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
 sudo apt-get -qq update && apt-get -qq upgrade -y
 sudo apt-get -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux resolvconf bashtop
 crontab -r
