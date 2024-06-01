@@ -10,6 +10,7 @@ sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
 sudo bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
+sudo echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
 rm -rf /usr/local/etc/xray/config.json
 cat <<EOF >> /usr/local/etc/xray/config.json
 {
@@ -61,6 +62,5 @@ sudo ufw deny out from any to 192.168.0.0/16
 sudo ufw deny out from any to 141.101.78.0/23
 sudo ufw deny out from any to 173.245.48.0/20
 echo "y" | sudo ufw enable
-echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
 exit
 sudo reboot
