@@ -1,7 +1,8 @@
 #!/bin/bash
 #echo "ubuntu:asdfASDF1234!" | sudo chpasswd
 echo "root:asdfASDF1234!" | sudo chpasswd
-#sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
+sudo echo "nameserver 1.1.1.1" > /etc/resolv.conf
+# sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
 sudo apt-get -qq update && apt-get -qq upgrade -y
 sudo apt-get -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux resolvconf bashtop
 crontab -r
@@ -10,7 +11,7 @@ sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
 sudo bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
-sudo echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
+# sudo echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
 rm -rf /usr/local/etc/xray/config.json
 cat <<EOF >> /usr/local/etc/xray/config.json
 {
