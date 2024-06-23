@@ -10,8 +10,9 @@ crontab -l | { cat; echo "5 1   *   *   *    sudo reboot"; } | crontab -
 sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
 sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
+sudo echo "nameserver 1.1.1.1" > /etc/resolv.conf
+sudo echo "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
 sudo bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
-# sudo echo -e "nameserver 1.1.1.1" >> /etc/resolvconf/resolv.conf.d/head
 rm -rf /usr/local/etc/xray/config.json
 cat <<EOF >> /usr/local/etc/xray/config.json
 {
@@ -35,7 +36,7 @@ cat <<EOF >> /usr/local/etc/xray/config.json
   ]
 }
 EOF
-sudo systemctl restart xray
+systemctl restart xray
 sudo ufw default allow routed
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
