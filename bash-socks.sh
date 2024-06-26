@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "DNS= 1.1.1.1" >> /etc/systemd/resolved.conf
+systemctl restart systemd-resolved.service
 #echo "ubuntu:asdfASDF1234!" | sudo chpasswd
 echo "root:asdfASDF1234!" | sudo chpasswd
 sudo echo "nameserver 1.1.1.1" > /etc/resolv.conf
