@@ -67,4 +67,3 @@ sudo ufw deny out from any to 141.101.78.0/23
 sudo ufw deny out from any to 173.245.48.0/20
 echo "y" | sudo ufw enable
 exit
-sudo reboot
