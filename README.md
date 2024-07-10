@@ -14,6 +14,11 @@ just xray
 ```
 sudo bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
 ```
+then edit this
+```
+nano /usr/local/etc/xray/config.json
+```
+----------------------------------------------------------------------------------------------------------
 dockodemo for tunnle
 ```
 {
