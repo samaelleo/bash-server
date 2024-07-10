@@ -23,8 +23,6 @@ dockodemo for tunnle
 ```
 {
   "log": {
-    "access": "/var/log/v2ray/access.log",
-    "error": "/var/log/v2ray/error.log",
     "loglevel": "warning"
   },
   "inbounds": [
@@ -46,4 +44,8 @@ dockodemo for tunnle
     }
   ]
 }
+```
+restart xray
+```
+systemctl restart xray
 ```
