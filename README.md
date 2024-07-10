@@ -22,27 +22,38 @@ nano /usr/local/etc/xray/config.json
 dockodemo for tunnle
 ```
 {
-  "log": {
-    "loglevel": "warning"
-  },
-  "inbounds": [
-    {
-      "listen": "0.0.0.0",
-      "port": 443,
-      "protocol": "dokodemo-door",
-      "settings": {
-        "address": "5.78.50.67",
-        "port": 443,
-        "network": "tcp,udp"
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "tag": "freedom"
-    }
-  ]
+   "inbounds": [
+     {
+       "listen": "127.0.0.1",
+       "port": 62789,
+       "protocol": "dokodemo-Door",
+       "settings": {
+         "address": "127.0.0.1"
+       },
+       "tag": "api"
+     },
+     {
+       "listen": null,
+       "port": Main_Server_Port,
+       "protocol": "dokodemo-Door",
+       "settings": {
+         "address": "MAIN_SERVER_IP",
+         "followRedirect": false,
+         "network": "tcp,udp",
+         "port": MAIN_SERVER_PORT
+       },
+       "tag": "inbound-MAIN_SERVER_PORT"
+     }
+   ],
+   "outbounds": [
+     {
+       "protocol": "freedom"
+     },
+     {
+       "protocol": "blackhole",
+       "tag": "blocked"
+     }
+   ]
 }
 ```
 restart xray
