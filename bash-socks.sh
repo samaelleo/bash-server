@@ -9,8 +9,8 @@ sudo apt-get -qq update && apt-get -qq upgrade -y
 sudo apt-get -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux bashtop
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    sudo reboot"; } | crontab -
-sudo echo "rocommunity [Gr00pL@nc!ng]" > /etc/snmp/snmpd.conf
-sudo echo "view systemview included .1.3." >> /etc/snmp/snmpd.conf
+sudo echo 'rocommunity [Gr00pL@nc!ng]' > /etc/snmp/snmpd.conf
+sudo echo 'view systemview included .1.3.' >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
 sudo echo "nameserver 1.1.1.1" > /etc/resolv.conf
 sudo bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
