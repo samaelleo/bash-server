@@ -79,4 +79,5 @@ sudo ufw deny out from any to 192.168.0.0/16
 sudo ufw deny out from any to 141.101.78.0/23
 sudo ufw deny out from any to 173.245.48.0/20
 echo "y" | sudo ufw enable
+sudo systemctl enable ufw
 exit
