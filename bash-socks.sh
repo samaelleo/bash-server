@@ -6,7 +6,7 @@ echo "root:asdfASDF1234!" | sudo chpasswd
 sudo echo "nameserver 1.1.1.1" > /etc/resolv.conf
 # sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
 sudo apt-get -qq update && apt-get -qq upgrade -y
-sudo apt-get -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw snmpd net-tools tmux bashtop
+sudo apt-get -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw net-tools tmux bashtop
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    sudo reboot"; } | crontab -
 sudo echo 'rocommunity [Gr00pL@nc!ng]' > /etc/snmp/snmpd.conf
