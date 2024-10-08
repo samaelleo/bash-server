@@ -13,7 +13,8 @@ sudo echo 'rocommunity [Gr00pL@nc!ng]' > /etc/snmp/snmpd.conf
 sudo echo 'view systemview included .1.3.' >> /etc/snmp/snmpd.conf
 systemctl restart snmpd
 sudo echo "nameserver 1.1.1.1" > /etc/resolv.conf
-bash <(curl -fsSL git.io/warp.sh) proxy
+bash <(curl -sSL https://raw.githubusercontent.com/hamid-gh98/x-ui-scripts/main/install_warp_proxy.sh)
+#bash <(curl -fsSL git.io/warp.sh) proxy
 sudo bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
 rm -rf /usr/local/etc/xray/config.json
 cat <<EOF >> /usr/local/etc/xray/config.json
