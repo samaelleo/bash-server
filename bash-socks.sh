@@ -1,4 +1,6 @@
 #!/bin/bash
+docker-compose down
+docker compose down
 echo "DNS= 1.1.1.1" >> /etc/systemd/resolved.conf
 systemctl restart systemd-resolved.service
 #echo "ubuntu:asdfASDF1234!" | sudo chpasswd
