@@ -71,6 +71,7 @@ sudo ufw allow from 167.235.158.128 to any port 7070
 sudo ufw allow from 95.217.37.174
 sudo ufw allow from 95.217.37.136
 sudo ufw allow from 167.235.54.233
+sudo ufw allow from 116.203.231.102
 sudo ufw deny out 25
 sudo ufw deny out 993
 sudo ufw deny out 465
