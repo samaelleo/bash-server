@@ -65,3 +65,8 @@ Install Docker
 ```
 bash <(curl -sSL https://get.docker.com)
 ```
+
+Install Warp  
+```
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh c
+```
