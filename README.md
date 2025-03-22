@@ -60,3 +60,8 @@ restart xray
 ```
 systemctl restart xray
 ```
+
+Install Docker 
+```
+bash <(curl -sSL https://get.docker.com)
+```
