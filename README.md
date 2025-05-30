@@ -70,3 +70,15 @@ Install Warp
 ```
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh c
 ```
+
+Get Certificate easily:
+
+```
+apt install certbot -y
+```
+```
+certbot certonly --standalone --agree-tos --register-unsafely-without-email -d ***.com
+```
+```
+certbot renew --dry-run
+```
