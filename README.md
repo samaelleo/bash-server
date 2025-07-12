@@ -88,3 +88,7 @@ For active auto renew:
 ```
 certbot renew --dry-run
 ```
+certbot with CF:
+```
+sudo certbot certonly --dns-cloudflare --dns-cloudflare-api-token YOUR_API_TOKEN -d "*.example.com" -d "example.com" --preferred-challenges dns-01
+```
