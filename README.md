@@ -76,8 +76,13 @@ Get Certificate easily:
 ```
 apt install certbot -y
 ```
+For single domain:
 ```
 certbot certonly --standalone --agree-tos --register-unsafely-without-email -d ***.com
+```
+for wildcard domain:
+```
+sudo certbot certonly --manual --preferred-challenges dns -d "*.example.com" -d "example.com"
 ```
 ```
 certbot renew --dry-run
