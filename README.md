@@ -84,6 +84,7 @@ for wildcard domain:
 ```
 sudo certbot certonly --manual --preferred-challenges dns -d "*.example.com" -d "example.com"
 ```
+For active auto renew:
 ```
 certbot renew --dry-run
 ```
