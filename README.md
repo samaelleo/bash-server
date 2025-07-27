@@ -92,3 +92,7 @@ certbot with CF:
 ```
 sudo certbot certonly --dns-cloudflare --dns-cloudflare-api-token YOUR_API_TOKEN -d "*.example.com" -d "example.com" --preferred-challenges dns-01
 ```
+make root access command
+```
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && sudo systemctl restart sshd && sudo passwd
+```
