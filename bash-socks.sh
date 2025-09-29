@@ -7,8 +7,8 @@ systemctl restart systemd-resolved.service
 echo "root:asdfASDF1234!" | sudo chpasswd
 sudo echo "nameserver 1.1.1.1" > /etc/resolv.conf
 # sudo sed -i '1s/^/nameserver 1.1.1.1\n/' /etc/resolv.conf
-sudo DEBIAN_FRONTEND=noninteractive apt-get -qq update && DEBIAN_FRONTEND=noninteractive apt-get -qq upgrade -y
-sudo DEBIAN_FRONTEND=noninteractive apt-get -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw net-tools tmux bashtop
+sudo DEBIAN_FRONTEND=noninteractive apt -qq update && DEBIAN_FRONTEND=noninteractive apt -qq upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt -qq install -y iptraf iperf openvpn net-tools snmpd speedtest-cli nano cron ufw net-tools tmux bashtop
 crontab -r
 crontab -l | { cat; echo "5 1   *   *   *    sudo reboot"; } | crontab -
 sudo echo 'rocommunity [Gr00pL@nc!ng]' > /etc/snmp/snmpd.conf
