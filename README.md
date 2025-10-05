@@ -96,3 +96,8 @@ make root access command
 ```
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && sudo systemctl restart sshd && sudo passwd
 ```
+Change MTU
+```
+for iface in $(ls /sys/class/net | grep -v lo); do sudo ip link set dev "$iface" mtu 1420; done && \
+(crontab -l 2>/dev/null; echo '@reboot for iface in $(ls /sys/class/net | grep -v lo); do ip link set dev "$iface" mtu 1420; done') | crontab -
+```
